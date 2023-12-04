@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load thumbnail %}
+
+{% block content %}
+
+
+<!-- All products section -->
+
+<section class="album py-5 bg-light">
+  <div class="container">
+    <div class="pb-3 h5">All tattoos</div>
+
+    <hr />
+
+    <br />
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+
+      {% for tattoo in tattoos %}
+      <div class="col">
+        <a class="text-black  text-decoration-none fs-4" href="{{tattoo.get_absolute_url}}">
+          <div class="card shadow-sm h-100">
+            
+            <img class="img-fluid" alt="Responsive image" src="{{ tattoo.image.url }}" />
+            
+            <div class="card-body">
+              <p class="card-text ">
+                {{tattoo.title|capfirst}}
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
