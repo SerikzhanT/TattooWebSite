@@ -23,6 +23,7 @@ INSTALLED_APPS = [
 
     # apps
     'gallery.apps.GalleryConfig',
+    'appointment.apps.AppointmentConfig',
 ]
 
 MIDDLEWARE = [
